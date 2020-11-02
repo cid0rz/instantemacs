@@ -36,11 +36,12 @@
 (setq vc-follow-symlinks t) ;;follow symlinks to edit the files
 ;;(desktop-save-mode 1) ;;to save frame configuration between sessions
 (add-hook 'prog-mode-hook 'flyspell-prog-mode) ;;enable spellchecking only in
-                                               ;;comments and strings for programming modes
+                                 ;;comments and strings for programming modes
 
-;;choose the default font for the frame, you can easily zoom buffer text with Ctrl and mouse wheel
+;;choose the default font for the frame, you can easily zoom buffer text with
+;;Ctrl and mouse wheel
 (add-to-list 'default-frame-alist
-             '(font . "FiraCode Nerd Font-14:style=Regular"))
+             '(font . "FiraCode Nerd Font-12:style=Regular"))
 
 
 
@@ -152,6 +153,18 @@
   ("C-c _"  . wrap-with-underscores)
   ("C-c `"  . wrap-with-back-quotes)
   :hook (prog-mode . smartparens-mode))
+
+(use-package company
+  :ensure t
+  :hook (after-init . global-company-mode)
+  :config
+  (require 'company-elisp)
+  (push 'company-elisp company-backends))
+
+(use-package company-jedi
+  :ensure t
+  :config
+  (push 'company-jedy company-backends))
 
 (use-package flycheck
   :ensure t
