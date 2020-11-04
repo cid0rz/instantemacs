@@ -88,10 +88,17 @@
 
 ;; THEME
 
-(use-package vscode-dark-plus-theme
-  :ensure t
+(use-package doom-themes
   :config
-  (load-theme 'vscode-dark-plus t))
+  (setq doom-themes-enabled-bold t
+        doom-themes-enabled-italic nil)
+  (load-theme 'doom-dark+ t)
+
+  (doom-themes-visual-bell-config)
+  (doom-themes-neotree-config)
+
+  (doom-themes-org-config))
+  
 
 ;; PACKAGES
 
@@ -201,6 +208,10 @@
   (custom-set-faces
    '(aw-leading-char-face
      ((t (:inherit ace-jump-face-foreground :height 3.0))))))
+
+(use-package doom-modeline
+  :ensure t
+  :config (doom-modeline-mode 1))
 
 ;;; init.el ends here
 
