@@ -88,20 +88,10 @@
 
 ;; THEME
 
-(use-package doom-themes
-  :config
-  (setq doom-themes-enabled-bold t
-        doom-themes-enabled-italic nil)
-  (load-theme 'doom-dark+ t)
-
-  (doom-themes-visual-bell-config)
-  (doom-themes-neotree-config)
-
-  (doom-themes-org-config))
-  
-(use-package doom-modeline
+(use-package vscode-dark-plus-theme
   :ensure t
-  :config (doom-modeline-mode 1))
+  :config
+  (load-theme 'vscode-dark-plus t))
 
 ;; PACKAGES
 
