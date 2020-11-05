@@ -27,7 +27,7 @@
 
 ;;GLOBAL CONFIGURATION
 
-;;(menu-bar-mode -1) ;; to disable the mebu bar
+;;(menu-bar-mode -1) ;; to disable the mebu bar (included in better defaults)
 (setq inhibit-startup-message t) ;;disable start screen(not needed for daemon)
 ;;(global-display-line-numbers-mode 1) ;; if you want line numbers
 ;;(global-set-key "\C-x\C-m" 'execute-extended-command) ;; add binding for M-x
@@ -40,8 +40,8 @@
 
 ;;choose the default font for the frame, you can easily zoom buffer text with
 ;;Ctrl and mouse wheel
-(add-to-list 'default-frame-alist
-             '(font . "FiraCode Nerd Font-12:style=Regular"))
+;(add-to-list 'default-frame-alist
+;             '(font . "FiraCode Nerd Font-12:style=Regular"))
 
 
 
@@ -99,6 +99,9 @@
 
   (doom-themes-org-config))
   
+(use-package doom-modeline
+  :ensure t
+  :config (doom-modeline-mode 1))
 
 ;; PACKAGES
 
@@ -209,10 +212,6 @@
    '(aw-leading-char-face
      ((t (:inherit ace-jump-face-foreground :height 3.0))))))
 
-(use-package doom-modeline
-  :ensure t
-  :config (doom-modeline-mode 1))
 
 ;;; init.el ends here
 
-; LocalWords:  zsh plugins
